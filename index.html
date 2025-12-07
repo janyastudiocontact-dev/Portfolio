@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Chandaliya - Graphic Designer & UI/UX Specialist</title>
+    <meta name="description"
+        content="Portfolio of Jay Chandaliya, a Graphic Designer and UI/UX Specialist obsessed with crafting visual stories through design.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#000001',
+                        foreground: '#cdbef1',
+                        card: '#19183a',
+                        'card-foreground': '#cdbef1',
+                        primary: '#7f30e4',
+                        'primary-foreground': '#ffffff',
+                        secondary: '#ae70f1',
+                        'secondary-foreground': '#000001',
+                        muted: '#19183a',
+                        'muted-foreground': '#ae70f1',
+                        border: '#7f30e4',
+                        ring: '#7f30e4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideInUp 0.6s ease-out',
+                        'slide-down': 'slideInDown 0.6s ease-out',
+                        'slide-left': 'slideInLeft 0.6s ease-out',
+                        'slide-right': 'slideInRight 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                        'scroll-left': 'scrollLeft 30s linear infinite',
+                        'glow': 'purpleGlow 2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+    class="bg-background text-foreground antialiased overflow-x-hidden selection:bg-primary selection:text-white cursor-none">
+
+    <!-- Custom Cursor Elements -->
+    <div id="cursor-dot"
+        class="fixed top-0 left-0 w-2 h-2 bg-[#7f30e4] rounded-full pointer-events-none z-[100000] mix-blend-difference -translate-x-1/2 -translate-y-1/2">
+    </div>
+    <div id="cursor-ring"
+        class="fixed top-0 left-0 w-8 h-8 border border-[#7f30e4] rounded-full pointer-events-none z-[99999] mix-blend-difference -translate-x-1/2 -translate-y-1/2">
+    </div>
+
+    <!-- Site Loader -->
+    <div id="site-loader"
+        class="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#000001] text-[#cdbef1]">
+        <div class="relative">
+            <h1 id="loader-count"
+                class="text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter opacity-0 translate-y-12 transition-all duration-500">
+                0</h1>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-difference">
+                <p class="text-xl md:text-3xl font-light tracking-[1em] uppercase whitespace-nowrap">Janya Studio</p>
+            </div>
+        </div>
+        <div class="absolute bottom-10 w-64 h-1 bg-[#19183a] overflow-hidden rounded-full">
+            <div id="loader-bar" class="h-full bg-[#7f30e4] w-0"></div>
+        </div>
+    </div>
+
+    <!-- Floating Header -->
+    <header id="floating-header"
+        class="fixed top-6 inset-x-0 z-50 mx-auto max-w-fit transition-all duration-1000 -translate-y-24 opacity-0">
+        <div id="header-container"
+            class="flex items-center gap-2 p-2 rounded-full border border-transparent transition-all duration-300">
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-1">
+                <a href="#home"
+                    class="nav-link relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 text-white"
+                    data-target="home">
+                    <div class="active-bg absolute inset-0 bg-[#7f30e4] rounded-full hidden"></div>
+                    <span class="relative z-10">Home</span>
+                </a>
+                <a href="#about"
+                    class="nav-link relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 text-[#cdbef1] hover:text-white"
+                    data-target="about">
+                    <div class="active-bg absolute inset-0 bg-[#7f30e4] rounded-full hidden"></div>
+                    <span class="relative z-10">About</span>
+                </a>
+                <a href="#services"
+                    class="nav-link relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 text-[#cdbef1] hover:text-white"
+                    data-target="services">
+                    <div class="active-bg absolute inset-0 bg-[#7f30e4] rounded-full hidden"></div>
+                    <span class="relative z-10">Services</span>
+                </a>
+                <a href="#skills"
+                    class="nav-link relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 text-[#cdbef1] hover:text-white"
+                    data-target="skills">
+                    <div class="active-bg absolute inset-0 bg-[#7f30e4] rounded-full hidden"></div>
+                    <span class="relative z-10">Skills</span>
+                </a>
+                <a href="#contact"
+                    class="nav-link relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 text-[#cdbef1] hover:text-white"
+                    data-target="contact">
+                    <div class="active-bg absolute inset-0 bg-[#7f30e4] rounded-full hidden"></div>
+                    <span class="relative z-10">Contact</span>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden px-4 py-2">
+                <button id="mobile-menu-btn"
+                    class="text-[#cdbef1] p-1 rounded-full hover:bg-[#7f30e4]/20 transition-colors">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-x-6 top-24 z-40 md:hidden bg-[#19183a]/95 backdrop-blur-xl border border-[#7f30e4]/30 rounded-2xl p-4 shadow-2xl hidden opacity-0 -translate-y-5 transition-all duration-300">
+        <div class="flex flex-col gap-2">
+            <a href="#home"
+                class="mobile-nav-link w-full text-left px-4 py-3 rounded-xl transition-colors bg-[#7f30e4] text-white">Home</a>
+            <a href="#about"
+                class="mobile-nav-link w-full text-left px-4 py-3 rounded-xl transition-colors text-[#cdbef1] hover:bg-[#3c269d]/30">About</a>
+            <a href="#services"
+                class="mobile-nav-link w-full text-left px-4 py-3 rounded-xl transition-colors text-[#cdbef1] hover:bg-[#3c269d]/30">Services</a>
+            <a href="#skills"
+                class="mobile-nav-link w-full text-left px-4 py-3 rounded-xl transition-colors text-[#cdbef1] hover:bg-[#3c269d]/30">Skills</a>
+            <a href="#contact"
+                class="mobile-nav-link w-full text-left px-4 py-3 rounded-xl transition-colors text-[#cdbef1] hover:bg-[#3c269d]/30">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative min-h-screen flex items-center justify-start overflow-hidden scroll-mt-24 bg-[#000001]">
+            <!-- Particles Background -->
+            <div id="particles-container" class="absolute inset-0 pointer-events-none"></div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto font-semibold px-11">
+                <h1 class="font-bold text-balance transition-all duration-1000 text-6xl mb-5 translate-y-12 opacity-0"
+                    id="hero-title" style="color: #cdbef1;">
+                    Make Your First Impression <br>
+                    <span class="inline-block text-[#7f30e4]" id="rotating-text">Unforgettable.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-pretty transition-all duration-1000 delay-300 mb-[25px] translate-y-8 opacity-0"
+                    id="hero-subtitle" style="color: #cdbef1;">
+                    Crafting Visual Stories Through Design
+                </p>
+                <p class="mb-8 text-pretty transition-all duration-1000 leading-[0rem] text-xl delay-500 translate-y-8 opacity-0"
+                    id="hero-desc" style="color: #cdbef1;">
+                    Your One-Stop Studio for Brand & Print.
+                </p>
+                <div class="transition-all duration-1000 delay-700 translate-y-8 opacity-0" id="hero-cta">
+                    <a href="https://drive.google.com/drive/folders/1-1h6FEuZWIwGtMReTI5Xn5h8KGzWE1q-" target="_blank"
+                        rel="noopener noreferrer"
+                        class="relative inline-flex items-center px-8 py-3 rounded-md overflow-hidden group transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+                        style="background-color: #7f30e4; color: #cdbef1;">
+                        <span class="relative z-10 font-bold text-lg">View Portfolio</span>
+                        <i data-lucide="arrow-right"
+                            class="ml-2 w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 relative scroll-mt-24 bg-[#000001]">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid md:grid-cols-2 items-center gap-12">
+                    <!-- Image Side -->
+                    <div class="flex justify-center md:justify-start order-1 relative group">
+                        <div
+                            class="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden border-2 border-[#7f30e4] shadow-[0_0_30px_rgba(127,48,228,0.3)] group-hover:shadow-[0_0_50px_rgba(174,112,241,0.5)] transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                            <img src="./public/about-me-new.jpg" alt="Jay - Graphic Designer"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+
+                            <!-- Floating Badge -->
+                            <div
+                                class="absolute bottom-6 left-6 z-20 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg">
+                                <p class="text-white font-bold text-sm">Jay Chandaliya</p>
+                                <p class="text-[#ae70f1] text-xs">Creative Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Side -->
+                    <div class="space-y-6 order-2">
+                        <h2 class="text-4xl font-bold mb-6 text-[#cdbef1]">About Me</h2>
+                        <p class="text-lg mb-6 leading-relaxed text-[#cdbef1]">
+                            Hello, my name is Jay, and I'm a graphic designer and UI/UX designer from Bhavnagar,
+                            Gujarat. I'm
+                            passionate about creating meaningful and intuitive digital experiences. By combining a
+                            strong eye for
+                            aesthetics with a deep understanding of user behavior, I specialize in crafting designs that
+                            are not
+                            only visually engaging but also effortless to use.
+                        </p>
+                        <p class="text-lg mb-8 leading-relaxed text-[#cdbef1]">
+                            I believe that the best design is both beautiful and functional. My work is driven by a
+                            commitment to
+                            solving problems and telling stories through clean, purposeful, and memorable visuals.
+                            Whether I'm
+                            building a brand or designing a seamless user interface, I'm dedicated to creating work that
+                            connects
+                            with people and delivers a great experience.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <!-- Badges will be inserted by JS or hardcoded -->
+                            <span
+                                class="badge px-2.5 py-0.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:animate-glow bg-[#7f30e4] text-[#cdbef1] border border-[#7f30e4]">Graphic
+                                Design</span>
+                            <span
+                                class="badge px-2.5 py-0.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:animate-glow bg-[#7f30e4] text-[#cdbef1] border border-[#7f30e4]">Visual
+                                Design</span>
+                            <span
+                                class="badge px-2.5 py-0.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:animate-glow bg-[#7f30e4] text-[#cdbef1] border border-[#7f30e4]">Digital
+                                Art</span>
+                            <span
+                                class="badge px-2.5 py-0.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:animate-glow bg-[#7f30e4] text-[#cdbef1] border border-[#7f30e4]">Creative
+                                Services</span>
+                            <span
+                                class="badge px-2.5 py-0.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:animate-glow bg-[#7f30e4] text-[#cdbef1] border border-[#7f30e4]">Typography</span>
+                            <span
+                                class="badge px-2.5 py-0.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:animate-glow bg-[#7f30e4] text-[#cdbef1] border border-[#7f30e4]">Visual
+                                Communication</span>
+                            <span
+                                class="badge px-2.5 py-0.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:animate-glow bg-[#7f30e4] text-[#cdbef1] border border-[#7f30e4]">Marketing
+                                Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 scroll-mt-24 bg-[#000001]">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-[#cdbef1]">Services</h2>
+                    <p class="text-xl font-semibold text-[#cdbef1]">What I can help you with</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="services-grid">
+                    <!-- Configured in JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="py-24 scroll-mt-24 bg-[#000001]">
+            <div class="max-w-9xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-[#cdbef1]">Tools & Software</h2>
+                    <p class="text-xl font-semibold text-[#cdbef1]">Professional tools I use to create stunning designs
+                    </p>
+                </div>
+
+                <!-- Logo Loop -->
+                <div class="relative overflow-hidden text-center font-semibold px-0 w-full opacity-100 shadow">
+                    <div class="flex animate-scroll-left hover:[animation-play-state:paused] flex-row gap-6 items-start justify-start w-max"
+                        id="tools-slider">
+                        <!-- Logos injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Gradient Fade -->
+                <div
+                    class="absolute left-0 top-0 bottom-0 w-32 pointer-events-none bg-gradient-to-r from-black to-transparent z-10">
+                </div>
+                <div
+                    class="absolute right-0 top-0 bottom-0 w-32 pointer-events-none bg-gradient-to-l from-black to-transparent z-10">
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 scroll-mt-24 bg-[#000001]">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-[#cdbef1]">My Skills</h2>
+                    <p class="text-xl font-semibold text-[#cdbef1]">Tools I master to bring your vision to life</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="skills-grid">
+                    <!-- Skill Circles injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 scroll-mt-24 bg-[#000001] justify-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-[#cdbef1]">Let's Connect</h2>
+                    <p class="text-xl font-semibold text-[#cdbef1]">Ready to bring your vision to life?</p>
+                    <p class="text-lg text-[#cdbef1] mt-2">Click Below to Contact Janya Studio</p>
+                </div>
+
+                <div class="flex flex-col items-center justify-center space-y-12">
+                    <div class="flex justify-center gap-8 max-w-5xl" id="contact-grid">
+                        <!-- Contact cards injected via JS -->
+                    </div>
+
+                    <div class="max-w-2xl text-center">
+                        <p class="text-lg leading-relaxed font-medium text-white/70">
+                            I'm always excited to work on new projects and collaborate with passionate people. Whether
+                            you need a
+                            complete brand identity or just want to chat about design, I'd love to hear from you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-[#7f30e4] bg-[#000001]">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0 font-bold text-[#cdbef1]">
+                        © 2025 janya studio. All rights reserved.
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <button
+                            class="relative overflow-hidden group transition-all duration-300 hover:scale-105 font-bold text-[#cdbef1] hover:bg-neutral-800/50 px-4 py-2 rounded-md">
+                            <span class="relative z-10">Get a Quote</span>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out">
+                            </div>
+                        </button>
+                        <button
+                            class="relative overflow-hidden group transition-all duration-300 hover:scale-105 font-bold text-[#cdbef1] hover:bg-neutral-800/50 px-4 py-2 rounded-md">
+                            <span class="relative z-10">Start a Project</span>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
